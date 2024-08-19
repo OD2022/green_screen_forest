@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src=script.js></script>
+</head>
+
+<body>
+  <form action="#" onsubmit="return validate()">
+    <img src='bxs_leaf.svg' id='leaf'>
+    <p id='welcomeBack'><b>Welcome back!</b></p>
+    <p id='lorem'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+    <div class=emailSection>
+      <input type="email" id="email" name="email" placeholder="Email" /><br>
+      <img src='mdi_email.svg' id='emailIcon'>
+    </div>
+
+    <div class='passwordSection'>
+      <input type="password" id="password" name="password" placeholder="Password"
+        oninvalid="this.setCustomValidity('Password can not be blank')" oninput="this.setCustomValidity('')" /><br>
+      <img src='material-symbols_lock.svg' id=passIcon>
+      <p></p>
+      <p></p>
+      <p id='forgetPassword'>Forgot Password?</p>
+    </div>
+
+
+    <input id="signIn" type="submit" value="Sign In"><br>
+    <p id='noAccount'>Don't have an account? Sign Up <a id='link' href='../sign_up/index.html'>Here</a></p>
+  </form>
+</body>
+
+</html>

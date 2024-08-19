@@ -1,0 +1,110 @@
+html{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  overflow-x: hidden;
+  font-family: 'Cambria';
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+ 
+}
+
+
+form{
+    width: 400px;
+    height: 450px;
+    background-color: white;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 0.3em;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#leaf{
+    width: 60px;
+    height: 60px;
+    padding-bottom: none;
+    }
+
+#welcomeBack{
+  position: relative;
+  bottom: 20px;
+}
+
+#lorem{
+  position: relative;
+  bottom: 30px;
+  width: 80%;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150.02%;
+  color: #7E8081;
+}
+
+#email, #password{
+  width: 350px;
+  height: 45px;
+  border-radius: 0.2em;
+  background-color: #b6b6b6;
+  font-size: 15px;
+  padding-left: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color:  #716f6f;
+  position: relative;
+  bottom: 10px;
+  border-width: 0;
+}
+
+
+#forgetPassword{
+  color: #1E1E1E;
+  font-size: 12px;
+  position: relative;
+  left: 140px;
+  bottom: 50px;
+}
+
+#signIn{
+  width: 350px;
+  height: 45px;
+  background-color:  #A80707;
+  border: none;
+  border-radius: 0.2em;
+  color: white;
+  font-size: 15px;
+  position: relative;
+  bottom: 45px;
+}
+
+#emailIcon, #passIcon{
+  position: relative;
+  left: 160px;
+  bottom:  50px;
+  width: 20px;
+  height: 20px;
+}
+
+#noAccount{
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  bottom: 40px;
+}
+
+a:link{
+  text-decoration: none;
+   color: #076CCA;
+}

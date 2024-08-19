@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Green Screen Forest</title>
+    <style>
+        * {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 10px;
+            margin: 0;
+            background: black;
+        }
+
+        #books {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .bookWrap {
+            border: 1px solid #dbdbdb;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .bookWrap:hover {
+            transform: scale(1.05);
+        }
+
+        .bookImg {
+            display: block;
+            width: 100%;
+        }
+
+        .bookTitle,
+        .bookDesc {
+            padding: 10px;
+            text-align: justify;
+        }
+
+        .bookTitle {
+            font-weight: 700;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .bookDesc {
+            padding-top: 0;
+            font-size: 14px;
+            color: #383737;
+            font-style: italic;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #books {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        nav {
+            background: black;
+            padding: 10px 0;
+            margin-bottom: 2em;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            position: relative;
+        }
+
+        a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            position: absolute;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        .borrowBtn {
+            /* display: block; */
+            position: absolute;
+            top: 20px;
+    
+            
+height: 0.5em;
+            margin: 2em auto;
+            width: 80%;
+            padding: 2em;
+            border: none;
+            border-top-left-radius: 0%;
+            border-bottom-left-radius: 0%;
+            border-top-right-radius: 2em;
+            background-color: #BC0000;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .borrowBtn:hover {
+            background-color: #6D0202;
+        }
+
+        .otherDetails {
+            color: #6d6b6b;
+            font-size: 0.9em;
+            text-align: justify;
+            font-weight: 900;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="./sign_up/index.html">Sign Up</a></li>
+            <li><a href="./login/login.html">Login</a></li>
+            <li><a href="./about_us/about.html">About Us</a></li>
+        </ul>
+    </nav>
+    <div id="books"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const books = [
+                {
+                    id: '1',
+                    working_title: 'Inception',
+                    storyline: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.',
+                    themes: 'Sci-Fi, Action',
+                    budget_range: '160,000,000',
+                    production_time: '8 months'
+                },
+                {
+                    id: '2',
+                    working_title: 'The Shawshank Redemption',
+                    storyline: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
+                    themes: 'Drama',
+                    budget_range: '25,000,000',
+                    production_time: '5 months'
+                },
+                {
+                    id: '3',
+                    working_title: 'Forrest Gump',
+                    storyline: 'Forrest, a man with low IQ, recounts the early years of his life when he found himself in the middle of key historical events.',
+                    themes: 'Sci-Fi, Action',
+                    budget_range: '63,000,000',
+                    production_time: '6 months'
+                },
+                {
+                    id: '4',
+                    working_title: 'The Godfather',
+                    storyline: 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',
+                    themes: 'Crime, Drama',
+                    budget_range: '6,000,000',
+                    production_time: '6 months'
+                },
+                {
+                    id: '5',
+                    working_title: 'Pulp Fiction',
+                    storyline: 'The lives of two mob hitmen, a boxer, a gangster\'s wife, and a pair of diner bandits intertwine in four tales of violence and redemption.',
+                    themes: 'Crime, Drama',
+                    budget_range: '8,000,000',
+                    production_time: '3 months'
+                },
+                {
+                    id: '6',
+                    working_title: 'The Dark Knight',
+                    storyline: 'When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, forcing Batman to return to his former self.',
+                    themes: 'Action, Crime',
+                    budget_range: '185,000,000',
+                    production_time: '5 months'
+                }
+            ];
+
+            const booksContainer = document.getElementById('books');
+            books.forEach(book => {
+                const bookWrap = document.createElement('div');
+                bookWrap.className = 'bookWrap';
+                bookWrap.dataset.id = book.id;
+
+                bookWrap.innerHTML = `
+                    <img class="bookImg" src="movie_posters/${book.id}.jpg" alt="${book.working_title}">
+                    <div class="bookTitle">${book.working_title}</div>
+                    <div class="bookDesc">${book.storyline}</div>
+                    <div class="otherDetails">Themes: ${book.themes}</div>
+                    <div class="otherDetails">Budget: $${book.budget_range}</div>
+                    <div class="otherDetails">Estimated Production Time: ${book.production_time}</div>
+                    <button class="borrowBtn">Donate to Director</button>
+                `;
+
+                booksContainer.appendChild(bookWrap);
+            });
+        });
+    </script>
+</body>
+</html>
