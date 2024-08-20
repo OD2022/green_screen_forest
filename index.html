@@ -60,9 +60,9 @@
             font-style: italic;
         }
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 800px) {
             #books {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
             }
         }
 
@@ -107,15 +107,13 @@
         }
 
         .borrowBtn {
-            /* display: block; */
+            display: block;
             position: absolute;
             top: 20px;
-    
-            
-height: 0.5em;
+            height: 0.5em;
             margin: 2em auto;
             width: 80%;
-            padding: 2em;
+            padding: 3em;
             border: none;
             border-top-left-radius: 0%;
             border-bottom-left-radius: 0%;
@@ -133,7 +131,7 @@ height: 0.5em;
         .otherDetails {
             color: #6d6b6b;
             font-size: 0.9em;
-            text-align: justify;
+            /* text-align: justify; */
             font-weight: 900;
             padding: 10px;
         }

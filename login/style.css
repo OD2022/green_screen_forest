@@ -87,6 +87,11 @@ form{
   font-size: 15px;
   position: relative;
   bottom: 45px;
+  
+}
+
+#signIn:hover{
+  cursor: pointer;
 }
 
 #emailIcon, #passIcon{
@@ -107,4 +112,40 @@ form{
 a:link{
   text-decoration: none;
    color: #076CCA;
+}
+
+@media (max-width: 800px) {
+
+  body{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+  }
+  form {
+    width: 90%; 
+    height: auto; 
+    padding: 20px; 
+    position: relative; 
+    top: auto; 
+    transform: none; 
+  }
+
+  #email, #password, #signIn {
+    width: 90%; 
+    height: 40px; 
+    font-size: 14px; 
+  }
+
+  #forgetPassword, #noAccount {
+    font-size: 10px; 
+    position: static;
+    margin: 10px 0; 
+  }
+
+  #emailIcon, #passIcon {
+    left: 10px; 
+    bottom: 10px; 
+    width: 15px; 
+    height: 15px; 
+  }
 }
