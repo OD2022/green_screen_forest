@@ -141,8 +141,6 @@ a:link{
     justify-self: center;
     align-content: center;
     justify-content: center;
-    
-    
   }
 
   #forgetPassword, #noAccount {
@@ -152,11 +150,7 @@ a:link{
   }
 
   #emailIcon, #passIcon {
-    position: relative;
-    bottom: 2.5em;
-    left: 8em;
     width: 20px; 
     height: 20px;
-    right: 0px; 
   }
 }
